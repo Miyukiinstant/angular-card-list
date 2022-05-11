@@ -1,0 +1,29 @@
+<mat-card>
+    <mat-card-content>
+    <mat-grid-list cols="3" rowHeight="3:1">
+        <mat-grid-tile>
+            <mat-progress-spinner [diameter]="diameter" [value]="spinner.hours"></mat-progress-spinner>
+            <h1>
+                {{date.getHours()}}
+            </h1>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <mat-progress-spinner [diameter]="diameter" [value]="spinner.minutes"></mat-progress-spinner>
+            <h1>
+                {{date.getMinutes()}}
+            </h1>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <mat-progress-spinner [diameter]="diameter" [value]="spinner.seconds"></mat-progress-spinner>
+            <h1>
+                {{date.getSeconds()}}
+            </h1>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </mat-card-content>
+</mat-card>
+<mat-card>
+    <mat-card-content>
+        <img src="" alt="" srcset="">
+    </mat-card-content>
+</mat-card>
