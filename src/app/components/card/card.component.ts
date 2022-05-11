@@ -24,7 +24,7 @@ export class CardComponent implements OnInit {
   ngOnInit(): void {
     fetch('http://localhost/').then(async response=>{
       const result = await response.json()
-      this.imgSrc = result
+      this.imgSrc = result.url
     })
     setInterval(()=>{
       this.date = new Date();
