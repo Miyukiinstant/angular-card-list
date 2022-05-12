@@ -11,12 +11,24 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatInputModule} from '@angular/material/input';
 import {MatSliderModule} from '@angular/material/slider';
 import { HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';
+import {MatButtonModule} from '@angular/material/button';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatTabsModule} from '@angular/material/tabs';
+import { FurtrackComponent } from './components/furtrack/furtrack.component';
+import { ClockComponent } from './components/clock/clock.component';
+import {MatTooltipModule} from '@angular/material/tooltip';
+
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    CardComponent
+    CardComponent,
+    FurtrackComponent,
+    ClockComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +40,12 @@ import { HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';
     MatInputModule,
     MatSliderModule,
     HttpClientModule,
-    HttpClientJsonpModule
+    HttpClientJsonpModule,
+    MatButtonModule,
+    MatProgressBarModule,
+    MatDividerModule,
+    MatSidenavModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

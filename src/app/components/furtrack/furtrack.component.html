@@ -4,7 +4,7 @@
             <mat-progress-bar color="accent" mode="indeterminate"></mat-progress-bar>
     </mat-card-content>
     <mat-card-content *ngIf="imgSrc">
-        <img [src]="imgSrc" (load)="show = false"  alt="" srcset="">
+        <a target="_blank" [href]="href" color="accent"><img [src]="imgSrc" (load)="show = false"  alt="" srcset=""></a>
     </mat-card-content>
     
 </mat-card>

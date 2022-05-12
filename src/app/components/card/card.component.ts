@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { InspirobotService } from 'src/app/services/inspirobot/inspirobot.service';
 
 @Component({
   selector: 'app-card',
@@ -9,29 +9,18 @@ import { HttpClient } from '@angular/common/http';
 
 export class CardComponent implements OnInit {
 
-  constructor(private httpclient:HttpClient) { }
-  imgSrc = ''
-  min = 0
-  max = 60
-  value = 0
-  diameter = 190
-  spinner = {
-    seconds: 0,
-    minutes: 0,
-    hours: 0,
-  }
-  date = new Date();
-  ngOnInit(): void {
-    fetch('http://localhost/').then(async response=>{
-      const result = await response.json()
+  constructor(private inspiro:InspirobotService) { }
+  imgSrc: string | undefined
+  show = false
+  getImage(): void{
+    this.inspiro.getImage().subscribe(result=>{
+      //const res = JSON.parse(JSON.stringify(result))
       this.imgSrc = result.url
     })
-    setInterval(()=>{
-      this.date = new Date();
-      this.spinner.seconds = new Date().getSeconds() * 100 / 60
-      this.spinner.minutes = new Date().getMinutes() * 100 / 60
-      this.spinner.hours = new Date().getHours() * 100 / 24
-    },1000)
+    this.show = true
+  }
+
+  ngOnInit(): void {
   }
 
 }
