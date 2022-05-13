@@ -19,6 +19,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import { FurtrackComponent } from './components/furtrack/furtrack.component';
 import { ClockComponent } from './components/clock/clock.component';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import { TabGroupComponent } from './components/tab-group/tab-group.component';
 
 
 
@@ -28,7 +29,8 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     AppComponent,
     CardComponent,
     FurtrackComponent,
-    ClockComponent
+    ClockComponent,
+    TabGroupComponent
   ],
   imports: [
     BrowserModule,
