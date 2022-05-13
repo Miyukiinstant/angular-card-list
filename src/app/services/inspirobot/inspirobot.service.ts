@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { INSPIRO } from './INSPIRO';
+import { INSPIRO } from './inspiro';
 
 @Injectable({
   providedIn: 'root'
