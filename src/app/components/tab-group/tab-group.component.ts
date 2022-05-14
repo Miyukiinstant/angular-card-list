@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { MatTabChangeEvent, MatTabGroup, MatTabNav, MatTabNavPanel } from '@angular/material/tabs';
 
 @Component({
   selector: 'app-tab-group',
@@ -12,14 +11,20 @@ export class TabGroupComponent implements OnInit{
 
   group: number = 0
 
-  tabs = ['Clock','Inspiro','Furtrack']
-  
-  selectionChange(): void{
-    document.title = 'Paws - ' + this.tabs[this.group]
+  aboutActive: boolean = false
+  title:string = ''
+  router:boolean = true
+  documentTitle(value:string): void{
+    document.title = `Paws - ${value}`
+  }
+
+  toggleRouter(state:boolean):void {
+    this.router= state
+    
   }
 
   ngOnInit(): void {
-    this.selectionChange()
+    this.documentTitle('Clock')
   }
 
 }

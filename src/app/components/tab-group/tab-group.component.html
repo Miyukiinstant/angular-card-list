@@ -1,5 +1,32 @@
-<mat-tab-group [(selectedIndex)]="group" (selectedIndexChange)="selectionChange()">
-    <mat-tab label="Clock" dynamicHeight><app-clock></app-clock></mat-tab>
-    <mat-tab label="Inspirobot"><app-card></app-card></mat-tab>
-    <mat-tab label="Furtrack"><app-furtrack></app-furtrack></mat-tab>
-</mat-tab-group>
+
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <button (click)="drawer.toggle()" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>Paws</span>   
+  </mat-toolbar-row>
+</mat-toolbar>  
+
+<mat-drawer-container style="position: static;">
+  <mat-drawer #drawer mode="over">
+    <mat-list>
+      <mat-list-item>
+        <a (click)="drawer.toggle()" routerLink="" mat-flat-button>Home</a>
+      </mat-list-item>
+      <mat-list-item>
+        <a (click)="drawer.toggle()"  routerLink="inspiro" mat-flat-button>Inspiro</a>
+      </mat-list-item>
+      <mat-list-item>
+        <a (click)="drawer.toggle()" routerLink="furtrack" mat-flat-button>Furtrack</a>
+      </mat-list-item>
+      <mat-list-item>
+        <a (click)="drawer.toggle()"  routerLink="about" mat-flat-button>About</a>
+      </mat-list-item>
+    </mat-list>
+    
+  </mat-drawer>
+  <mat-drawer-content>
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>
