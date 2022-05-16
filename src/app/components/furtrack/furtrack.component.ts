@@ -1,4 +1,6 @@
-import { Component, Injectable, OnInit } from '@angular/core';
+import { Component, Injectable, OnInit, Output } from '@angular/core';
+import { Title } from '@angular/platform-browser';
+import { ActivatedRoute } from '@angular/router';
 import { FurtrackService } from 'src/app/services/futrack/furtrack.service';
 
 @Component({
@@ -9,10 +11,11 @@ import { FurtrackService } from 'src/app/services/futrack/furtrack.service';
 
 export class FurtrackComponent implements OnInit {
 
-  constructor(private furtrack:FurtrackService) { }
+  constructor(private furtrack:FurtrackService,private title:Title,private routes:ActivatedRoute) { }
   href: string = ''
   imgSrc: string = ''
   show = false
+
   getImage(): void{
     this.show = true
     this.furtrack.getImage().subscribe(result=>{
@@ -22,7 +25,9 @@ export class FurtrackComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    
+    this.routes.data.subscribe(title=>{
+      this.title.setTitle(title['title'])
+    })
   }
 
 }

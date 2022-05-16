@@ -1,4 +1,5 @@
 <mat-card>
+    <mat-card-title>Inspiro</mat-card-title>
     <button [disabled]="show" mat-raised-button (click)="getImage()" color="accent">Generate</button>
     <mat-card-content *ngIf="show">
             <mat-progress-bar color="accent" mode="indeterminate"></mat-progress-bar>
@@ -6,5 +7,4 @@
     <mat-card-content *ngIf="imgSrc">
         <img [src]="imgSrc" (load)="show = false"  alt="" srcset="">
     </mat-card-content>
-    
 </mat-card>

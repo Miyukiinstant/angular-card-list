@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
+import { ActivatedRoute } from '@angular/router';
 import { InspirobotService } from 'src/app/services/inspirobot/inspirobot.service';
 
 @Component({
@@ -9,18 +11,20 @@ import { InspirobotService } from 'src/app/services/inspirobot/inspirobot.servic
 
 export class CardComponent implements OnInit {
 
-  constructor(private inspiro:InspirobotService) { }
+  constructor(private inspiro:InspirobotService,private routes: ActivatedRoute,private title:Title) { }
   imgSrc: string | undefined
   show = false
   getImage(): void{
     this.inspiro.getImage().subscribe(result=>{
-      //const res = JSON.parse(JSON.stringify(result))
       this.imgSrc = result.url
     })
     this.show = true
   }
 
   ngOnInit(): void {
+    this.routes.data.subscribe(title=>{
+      this.title.setTitle(title['title'])
+    })
   }
 
 }

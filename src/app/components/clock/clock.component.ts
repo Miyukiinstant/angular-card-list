@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
+import { ActivatedRoute } from '@angular/router';
+import { faClock } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-clock',
@@ -7,13 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClockComponent implements OnInit {
 
-  constructor() { }
-  imgSrc: string = ''
+  constructor(private routes: ActivatedRoute,private title:Title) { }
   show = false
   min:number = 0
   max:number = 60
   value:number = 0
   diameter:number = 190
+  faClock = faClock;
   spinner = {
     seconds: 0,
     minutes: 0,
@@ -21,6 +24,9 @@ export class ClockComponent implements OnInit {
   }
   date = new Date();
   ngOnInit(): void {
+    this.routes.data.subscribe(title=>{
+      this.title.setTitle(title['title'])
+    })
     setInterval(()=>{
       this.date = new Date();
       this.spinner.seconds = new Date().getSeconds() * 100 / 60

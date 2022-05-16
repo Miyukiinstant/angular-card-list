@@ -6,15 +6,16 @@ import { ClockComponent } from './components/clock/clock.component';
 import { FurtrackComponent } from './components/furtrack/furtrack.component';
 
 const routes: Routes = [
-  {path: '', component: ClockComponent},
-  {path:'inspiro', component: CardComponent},
-  {path: 'furtrack', component: FurtrackComponent},  
-  {path: 'about', component: AboutComponent },
+  {path: '', component: ClockComponent, data:{title:"Home"}},
+  {path:'inspiro', component: CardComponent, data:{title:"Inspiro"}},
+  {path: 'furtrack', component: FurtrackComponent, data:{title:"Furtrack"}},  
+  {path: 'about', component: AboutComponent, data:{title:"About"} },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
+
 export class AppRoutingModule { }
-export const routingComponents= [AboutComponent, FurtrackComponent, CardComponent, ClockComponent]
+export const routingComponents = [ClockComponent, CardComponent, FurtrackComponent, AboutComponent]
