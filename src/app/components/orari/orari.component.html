@@ -1,0 +1,16 @@
+<mat-card>
+    <mat-card-content *ngIf="(!showIframe)">
+        <mat-form-field appearance="fill">
+            <mat-label>PIN</mat-label>
+            <input #inp name="password" type="password" matInput required="">
+        </mat-form-field>
+        <mat-card-content>
+            <button mat-raised-button (click)="verifyPassword(inp.value)">Login</button>
+        </mat-card-content>
+        
+    </mat-card-content>
+    
+    <mat-card-content *ngIf="(showIframe)">
+        <iframe src="https://drive.google.com/file/d/1_G8QP8LQRQown0vZTDfRTSUaPpEeeNbc/preview" height="480" allow="autoplay"></iframe>
+    </mat-card-content>
+</mat-card>

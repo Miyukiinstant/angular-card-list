@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-tab-group',
@@ -9,7 +8,6 @@ import { Title } from '@angular/platform-browser';
 export class TabGroupComponent implements OnInit{
 
   constructor() { }
-
   ngOnInit(): void {
   }
 

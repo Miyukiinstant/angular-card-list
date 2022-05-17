@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { InspirobotService } from 'src/app/services/inspirobot/inspirobot.service';
+import { Urls } from 'src/app/interfaces/urls';
 
 @Component({
   selector: 'app-card',

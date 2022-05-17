@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import {  Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Inspiro } from 'src/app/interfaces/inspiro';
+import { Urls } from 'src/app/interfaces/urls';
 
 @Injectable({
   providedIn: 'root'
@@ -9,8 +10,7 @@ import { Inspiro } from 'src/app/interfaces/inspiro';
 export class InspirobotService {
 
   constructor(private http:HttpClient) { }
-  private baseURI = `${document.location.protocol}//${document.location.hostname}/api.php`
   getImage(): Observable<Inspiro>{
-    return this.http.get<Inspiro>(this.baseURI);
+    return this.http.get<Inspiro>(new Urls().urls.api);
   }
 }

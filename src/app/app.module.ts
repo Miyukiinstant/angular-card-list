@@ -18,6 +18,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatListModule} from '@angular/material/list';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatInputModule} from '@angular/material/input';
 
 
 //Fontawesome
@@ -45,7 +46,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     MatIconModule,
     MatListModule,
     MatSlideToggleModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

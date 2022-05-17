@@ -5,6 +5,7 @@
             <mat-progress-bar color="accent" mode="indeterminate"></mat-progress-bar>
     </mat-card-content>
     <mat-card-content *ngIf="imgSrc">
-        <img [src]="imgSrc" (load)="show = false"  alt="" srcset="">
+        
+        <img [src]="imgSrc" (load)="show = false">
     </mat-card-content>
 </mat-card>
