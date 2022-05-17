@@ -11,7 +11,7 @@ const routes: Routes = [
   {path:'inspiro', component: CardComponent, data:{title:"Inspiro"}},
   {path: 'furtrack', component: FurtrackComponent, data:{title:"Furtrack"}},  
   {path: 'about', component: AboutComponent, data:{title:"About"} },
-  {path: 'orari', component: OrariComponent, data:{title:"Orari"} },
+  {path: 'orario', component: OrariComponent, data:{title:"Orario"} },
 ];
 
 @NgModule({

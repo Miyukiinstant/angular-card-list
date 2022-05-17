@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
 import { LoginService } from 'src/app/services/orari/login.service';
 import { Urls } from 'src/app/interfaces/urls';
+import { Title } from '@angular/platform-browser';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-orari',
@@ -11,7 +13,7 @@ import { Urls } from 'src/app/interfaces/urls';
 })
 export class OrariComponent implements OnInit {
 
-  constructor(private login:LoginService) { }
+  constructor(private login:LoginService, private title:Title,private routes:ActivatedRoute) { }
   showIframe:boolean = false
   verifyPassword(value:string): void{
     this.login.getLogin(Number(value)).subscribe(login=>{
@@ -19,7 +21,9 @@ export class OrariComponent implements OnInit {
     })
   }
   ngOnInit(): void {
-    
+    this.routes.data.subscribe(title=>{
+      this.title.setTitle(title['title'])
+    })
   }
 
 }
