@@ -1,9 +1,6 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, Input, OnInit, Sanitizer } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { LoginService } from 'src/app/services/orari/login.service';
 import { Urls } from 'src/app/interfaces/urls';
-import { Title } from '@angular/platform-browser';
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-orari',

@@ -1,8 +1,5 @@
-import { Component, Injectable, OnInit, Output } from '@angular/core';
-import { Title } from '@angular/platform-browser';
-import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
 import { FurtrackService } from 'src/app/services/futrack/furtrack.service';
-import { Urls } from 'src/app/interfaces/urls';
 
 @Component({
   selector: 'app-furtrack',

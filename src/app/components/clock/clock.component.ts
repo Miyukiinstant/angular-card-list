@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Title } from '@angular/platform-browser';
-import { ActivatedRoute } from '@angular/router';
 import { faClock } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -10,7 +8,7 @@ import { faClock } from '@fortawesome/free-solid-svg-icons';
 })
 export class ClockComponent implements OnInit {
 
-  constructor(private routes: ActivatedRoute) { }
+  constructor() { }
   show = false
   min:number = 0
   max:number = 60

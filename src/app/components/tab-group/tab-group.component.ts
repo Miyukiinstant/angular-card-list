@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { ActivatedRoute, Router, Routes} from '@angular/router';
+import { Router} from '@angular/router';
 
 
 @Component({
