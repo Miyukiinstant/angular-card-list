@@ -9,11 +9,8 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class AboutComponent implements OnInit {
 
-  constructor(private routes: ActivatedRoute,private title:Title) { }
+  constructor() { }
   ngOnInit(): void {
-    this.routes.data.subscribe(title=>{
-      this.title.setTitle(title['title'])
-    })
   }
 
 }

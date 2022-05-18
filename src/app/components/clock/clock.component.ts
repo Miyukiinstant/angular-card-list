@@ -10,28 +10,25 @@ import { faClock } from '@fortawesome/free-solid-svg-icons';
 })
 export class ClockComponent implements OnInit {
 
-  constructor(private routes: ActivatedRoute,private title:Title) { }
+  constructor(private routes: ActivatedRoute) { }
   show = false
   min:number = 0
   max:number = 60
   value:number = 0
   diameter:number = 190
   faClock = faClock;
-  spinner = {
-    seconds: 0,
-    minutes: 0,
-    hours: 0,
-  }
+  times = [
+    {value:0},
+    {value:0},
+    {value:0}
+  ]
   date = new Date();
   ngOnInit(): void {
-    this.routes.data.subscribe(title=>{
-      this.title.setTitle(title['title'])
-    })
     setInterval(()=>{
       this.date = new Date();
-      this.spinner.seconds = new Date().getSeconds() * 100 / 60
-      this.spinner.minutes = new Date().getMinutes() * 100 / 60
-      this.spinner.hours = new Date().getHours() * 100 / 24
+      this.times[0].value = new Date().getHours()
+      this.times[1].value = new Date().getMinutes() 
+      this.times[2].value = new Date().getSeconds() 
     },1000)
   }
 

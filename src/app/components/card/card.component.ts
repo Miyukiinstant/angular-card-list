@@ -12,7 +12,7 @@ import { Urls } from 'src/app/interfaces/urls';
 
 export class CardComponent implements OnInit {
 
-  constructor(private inspiro:InspirobotService,private routes: ActivatedRoute,private title:Title) { }
+  constructor(private inspiro:InspirobotService) { }
   imgSrc: string | undefined
   show = false
   getImage(): void{
@@ -23,9 +23,6 @@ export class CardComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.routes.data.subscribe(title=>{
-      this.title.setTitle(title['title'])
-    })
   }
 
 }

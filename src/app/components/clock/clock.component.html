@@ -2,17 +2,10 @@
     <mat-card-title style="text-align: center;" [innerText]="date.toLocaleString()"></mat-card-title>    
     <mat-slide-toggle #slideToggle><mat-icon><fa-icon [icon]="faClock"></fa-icon></mat-icon></mat-slide-toggle>
     <div *ngIf="slideToggle.checked">
-        <mat-card-content>
-            <mat-progress-spinner color="accent" [value]="spinner.hours"></mat-progress-spinner>
-            <h1 [innerText]="date.getHours()"></h1>
+        <mat-card-content *ngFor="let time of times">
+            <mat-progress-spinner color="accent" [value]="time.value * 100 / 60"></mat-progress-spinner>
+            <h1 [innerText]="time.value"></h1>
         </mat-card-content>
-        <mat-card-content>
-            <mat-progress-spinner color="accent" [value]="spinner.minutes"></mat-progress-spinner>
-            <h1 [innerText]="date.getMinutes()"></h1>
-        </mat-card-content>
-        <mat-card-content>
-            <mat-progress-spinner color="accent" [value]="spinner.seconds"></mat-progress-spinner>
-            <h1 [innerText]="date.getSeconds()"></h1>            
-        </mat-card-content>
+
     </div>
 </mat-card>

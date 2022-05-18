@@ -4,20 +4,8 @@
 <mat-drawer-container hasBackdrop="false" style="position: static;" autosize="true">
   <mat-drawer #drawer mode="push">
     <mat-list>
-      <mat-list-item>
-        <a (click)="drawer.toggle()" routerLink="" mat-raised-button>Home</a>
-      </mat-list-item>
-      <mat-list-item>
-        <a (click)="drawer.toggle()"  routerLink="inspiro" mat-raised-button>Inspiro</a>
-      </mat-list-item>
-      <mat-list-item>
-        <a (click)="drawer.toggle()" routerLink="furtrack" mat-raised-button>Furtrack</a>
-      </mat-list-item>
-      <mat-list-item>
-        <a (click)="drawer.toggle()"  routerLink="about" mat-raised-button>About</a>
-      </mat-list-item>
-      <mat-list-item>
-        <a (click)="drawer.toggle()"  routerLink="orario" mat-raised-button>Orario</a>
+      <mat-list-item *ngFor="let route of routes">
+        <a (click)="drawer.toggle()" (click)="setTitle(route.data.title)" [routerLink]="route.path" mat-raised-button [innerText]="route.data.title"></a>
       </mat-list-item>
     </mat-list>
     
@@ -28,7 +16,9 @@
         <button (click)="drawer.toggle()" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
           <mat-icon>menu</mat-icon>
         </button>
+        
         <span><img src="../../../favicon.ico">  </span>
+        <h1 style="margin-left: 1em;" [innerText]="getTitle().getTitle()"></h1>
       </mat-toolbar-row>
     </mat-toolbar> 
     <router-outlet></router-outlet>

@@ -10,8 +10,8 @@ const routes: Routes = [
   {path: '', component: ClockComponent, data:{title:"Home"}},
   {path:'inspiro', component: CardComponent, data:{title:"Inspiro"}},
   {path: 'furtrack', component: FurtrackComponent, data:{title:"Furtrack"}},  
-  {path: 'about', component: AboutComponent, data:{title:"About"} },
   {path: 'orario', component: OrariComponent, data:{title:"Orario"} },
+  {path: 'about', component: AboutComponent, data:{title:"About"} },
 ];
 
 @NgModule({

@@ -12,7 +12,7 @@ import { Urls } from 'src/app/interfaces/urls';
 
 export class FurtrackComponent implements OnInit {
 
-  constructor(private furtrack:FurtrackService,private title:Title,private routes:ActivatedRoute) { }
+  constructor(private furtrack:FurtrackService) { }
   href: string = ''
   imgSrc: string = ''
   show = false
@@ -26,9 +26,7 @@ export class FurtrackComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.routes.data.subscribe(title=>{
-      this.title.setTitle(title['title'])
-    })
+
   }
 
 }
